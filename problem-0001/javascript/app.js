@@ -1,11 +1,19 @@
-'use strict';
+function euler(maxValue) {
+  'use strict';
 
-var sum = 0;
+  var sum = 0
+    , currentValue
+    , multipleOfThreeOrFive;
 
-for(var i = 1; i < 1000; i++) {
-  if(i % 3 == 0 || i % 5 == 0) {
-    sum += i;
+  for(currentValue = 1; currentValue < maxValue; currentValue++) {
+    multipleOfThreeOrFive = currentValue % 3 === 0 || currentValue % 5 === 0;
+
+    if(multipleOfThreeOrFive) {
+      sum += currentValue;
+    }
   }
+
+  return sum;
 }
 
-console.log(sum);
+console.log(euler(1000));

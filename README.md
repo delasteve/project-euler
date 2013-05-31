@@ -5,7 +5,7 @@ These are solutions to problems by [Project Euler](http://www.projecteuler.net).
 
 All problems have a README with a link to the problem page where it was originally taken.
 
-All problems from Project Euler are licensed under Attribution-NonCommercial-ShareAlike 2.0 UK: England & Wales.
+All problems from Project Euler are licensed under the Creative Commons License: Attribution-NonCommercial-ShareAlike 2.0 UK: England & Wales.
 
 Each solution to a problem is licensed under the BSD 2-Clause License.
 

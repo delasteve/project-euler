@@ -1,3 +1,5 @@
+'use strict';
+
 function calculateLargestPrimeFactor(primeValue) {
   var newNumber = primeValue
     , counter = 2

@@ -1,8 +1,36 @@
-10001st prime
-==========
+'use strict';
 
-By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+function isPrime(number) {
+  var isFactorOfTwo = number % 2 === 0
+    , i;
 
-What is the 10 001st prime number?
+  if (isFactorOfTwo) {
+    return false;
+  }
 
-[Link to problem](http://www.projecteuler.net/problem=7)
+  for(i = 3; i*i <= number; i+=2) {
+    var isFactor = number % i == 0;
+    if (isFactor) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function findNthPrimeNumber(primeToStopAt) {
+  var number = 3
+    , primeList= [2];
+
+  while (primeList.length < primeToStopAt) {
+    if (isPrime(number)) {
+      primeList.push(number);
+    }
+
+    number++;
+  }
+
+  return primeList.pop();
+}
+
+console.log(findNthPrimeNumber(10001));

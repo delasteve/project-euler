@@ -46,7 +46,7 @@ function parsePage(folderName) {
         if (err) throw err;
         fs.mkdir(folderName + '/javascript', 0775, function(err) {
           if (err) throw err;
-          fs.writeFile(folderName + '/javascript/app.js', fileToBeWritten, function(err) {
+          fs.writeFile(folderName + '/javascript/app.js', '', function(err) {
             if(err) throw err;
             console.log('Created folder for problem ' + problemNumber);
           });

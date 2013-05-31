@@ -5,7 +5,7 @@
 var fs = require('fs')
   , request = require('request')
   , cheerio = require('cheerio')
-  , problemNumber = 6;
+  , problemNumber = 7;
 
 function createFolder(callback) {
   var folderName = 'problem-0';
@@ -44,6 +44,13 @@ function parsePage(folderName) {
       if(err) throw err;
       fs.writeFile(folderName + '/answer.txt', '', function(err) {
         if (err) throw err;
+        fs.mkdir(folderName + '/javascript', 0775, function(err) {
+          if (err) throw err;
+          fs.writeFile(folderName + '/javascript/app.js', fileToBeWritten, function(err) {
+            if(err) throw err;
+            console.log('Created folder for problem ' + problemNumber);
+          });
+        });
       });
     });
   });

@@ -1,6 +1,6 @@
-function euler(maxValue) {
-  'use strict';
+'use strict';
 
+function euler(maxValue) {
   var sum = 0
     , currentValue
     , multipleOfThreeOrFive;

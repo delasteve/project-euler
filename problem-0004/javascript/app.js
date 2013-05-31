@@ -8,7 +8,7 @@ function isPalindrome(value) {
   return value.toString() === value.toString().reverse()
 }
 
-function palindrome(minValue, maxValue) {
+function calculateLargestPalindrome(minValue, maxValue) {
   var largestPalindrome = 0
     , i
     , j;
@@ -27,4 +27,4 @@ function palindrome(minValue, maxValue) {
   return largestPalindrome;
 }
 
-console.log(palindrome(100, 999));
+console.log(calculateLargestPalindrome(100, 999));

@@ -5,7 +5,7 @@
 var fs = require('fs')
   , request = require('request')
   , cheerio = require('cheerio')
-  , problemNumber = 5;
+  , problemNumber = 6;
 
 function createFolder(callback) {
   var folderName = 'problem-0';

@@ -5,7 +5,7 @@
 var fs = require('fs')
   , request = require('request')
   , cheerio = require('cheerio')
-  , problemNumber = 3;
+  , problemNumber = 4;
 
 function createFolder(callback) {
   var folderName = 'problem-0';
@@ -35,7 +35,7 @@ function parsePage(folderName) {
     var fileToBeWritten = problemTitle + '\n==========\n\n';
 
     problemStatement.each(function(i, pTag) {
-      fileToBeWritten += $(pTag).text() + '\n\n';
+      fileToBeWritten += $(pTag).html() + '\n\n';
     });
 
     fileToBeWritten += '[Link to problem](' + url +')';

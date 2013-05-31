@@ -1,6 +1,6 @@
 'use strict';
 
-function euler(maxValue) {
+function calculateSumOfMultiplesOfThreeAndFive(maxValue) {
   var sum = 0
     , currentValue;
 
@@ -15,4 +15,4 @@ function euler(maxValue) {
   return sum;
 }
 
-console.log(euler(1000));
+console.log(calculateSumOfMultiplesOfThreeAndFive(1000));

@@ -1,6 +1,6 @@
 'use strict';
 
-function euler(maxValue) {
+function calculateSumOfEvenFibonacci(maxValue) {
   var sum = 0
     , first = 1
     , second = 2;
@@ -21,4 +21,4 @@ function euler(maxValue) {
   return sum;
 }
 
-console.log(euler(4000000));
+console.log(calculateSumOfEvenFibonacci(4000000));

@@ -1,4 +1,5 @@
 'use strict';
+
 function calculateProduct(arrayOfNumbers) {
   var product = 1
     , i;

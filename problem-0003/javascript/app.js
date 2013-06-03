@@ -1,16 +1,16 @@
-'use strict';
-
 function calculateLargestPrimeFactor(primeValue) {
-  var newNumber = primeValue
-    , counter = 2
-    , largestFactor = 0;
+  'use strict';
 
-  while(counter * counter <= newNumber) {
+  var counter = 2;
+  var largestFactor = 0;
+  var newNumber = primeValue;
+
+  while (counter * counter <= newNumber) {
     if (newNumber % counter === 0) {
       newNumber /= counter;
       largestFactor = counter;
     } else {
-      counter++;
+      counter += 1;
     }
   }
 

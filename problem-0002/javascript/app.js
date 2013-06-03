@@ -1,13 +1,14 @@
-'use strict';
-
 function calculateSumOfEvenFibonacci(maxValue) {
-  var sum = 0
-    , first = 1
-    , second = 2;
+  'use strict';
+
+  var first = 1;
+  var multipleOfTwo;
+  var second = 2;
+  var sum = 0;
+  var temp;
 
   while (second < maxValue) {
-    var multipleOfTwo = second % 2 === 0
-      , temp;
+    multipleOfTwo = second % 2 === 0;
 
     if (multipleOfTwo) {
       sum += second;

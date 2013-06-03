@@ -1,15 +1,17 @@
-'use strict';
-
 function calculateSmallestDivisibleNumber(maxValue) {
-  var valueFound = false
-    , smallestNumber = maxValue;
+  'use strict';
+
+  var i;
+  var isNotDivisible;
+  var isNotEvenRemainder;
+  var smallestNumber = maxValue;
+  var valueFound = false;
 
   while (!valueFound) {
-    var isNotDivisible = true
-      , i;
+    isNotDivisible = true;
 
-    for (i = 1; i <= maxValue; i++) {
-      var isNotEvenRemainder = smallestNumber % i !== 0;
+    for (i = 1; i <= maxValue; i += 1) {
+      isNotEvenRemainder = smallestNumber % i !== 0;
 
       if (isNotEvenRemainder) {
         isNotDivisible = false;
@@ -18,7 +20,7 @@ function calculateSmallestDivisibleNumber(maxValue) {
     }
 
     if (!isNotDivisible) {
-      smallestNumber++;
+      smallestNumber += 1;
     } else {
       valueFound = true;
     }

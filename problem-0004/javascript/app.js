@@ -1,22 +1,29 @@
-'use strict';
+function reverseString(stringToReverse) {
+  'use strict';
 
-String.prototype.reverse = function() {
-  return this.split('').reverse().join('');
-};
+  return stringToReverse.split('').reverse().join('');
+}
 
 function isPalindrome(value) {
-  return value.toString() === value.toString().reverse()
+  'use strict';
+
+  return value.toString() === reverseString(value.toString());
 }
 
 function calculateLargestPalindrome(minValue, maxValue) {
-  var largestPalindrome = 0
-    , i
-    , j;
+  'use strict';
 
-  for (i = minValue; i <= maxValue; i++) {
-    for (j = minValue; j <= maxValue; j++) {
-      var temp = i * j
-        , isPalindromeAndIsLargerThanLastPalindrome = isPalindrome(temp) && temp > largestPalindrome;
+  var i;
+  var isPalindromeAndIsLargerThanLastPalindrome;
+  var j;
+  var largestPalindrome = 0;
+  var temp;
+
+  for (i = minValue; i <= maxValue; i += 1) {
+    for (j = minValue; j <= maxValue; j += 1) {
+      temp = i * j;
+      isPalindromeAndIsLargerThanLastPalindrome =
+        isPalindrome(temp) && temp > largestPalindrome;
 
       if (isPalindromeAndIsLargerThanLastPalindrome) {
         largestPalindrome = temp;

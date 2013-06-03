@@ -1,15 +1,17 @@
-'use strict';
-
 function isPrime(number) {
-  var isFactorOfTwo = number % 2 === 0
-    , i;
+  'use strict';
+
+  var i;
+  var isFactor;
+  var isFactorOfTwo = number % 2 === 0;
 
   if (isFactorOfTwo) {
     return false;
   }
 
-  for(i = 3; i*i <= number; i+=2) {
-    var isFactor = number % i == 0;
+  for (i = 3; i * i <= number; i += 2) {
+    isFactor = number % i === 0;
+
     if (isFactor) {
       return false;
     }
@@ -19,15 +21,17 @@ function isPrime(number) {
 }
 
 function findNthPrimeNumber(primeToStopAt) {
-  var number = 3
-    , primeList= [2];
+  'use strict';
+
+  var number = 3;
+  var primeList = [2];
 
   while (primeList.length < primeToStopAt) {
     if (isPrime(number)) {
       primeList.push(number);
     }
 
-    number++;
+    number += 1;
   }
 
   return primeList.pop();

@@ -1,13 +1,13 @@
-'use strict';
-
 function calculateSumSquareDifference(valueToCalculate) {
-  var sumSquareThenAdd = 0
-    , sumNaturalNumbers = 0
-    , sumAddThenSquare
-    , difference
-    , i;
+  'use strict';
 
-  for (i = 1; i <= valueToCalculate; i++) {
+  var difference;
+  var i;
+  var sumSquareThenAdd = 0;
+  var sumNaturalNumbers = 0;
+  var sumAddThenSquare;
+
+  for (i = 1; i <= valueToCalculate; i += 1) {
     sumSquareThenAdd += Math.pow(i, 2);
     sumNaturalNumbers += i;
   }

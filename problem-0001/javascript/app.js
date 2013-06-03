@@ -1,13 +1,14 @@
-'use strict';
-
 function calculateSumOfMultiplesOfThreeAndFive(maxValue) {
-  var sum = 0
-    , currentValue;
+  'use strict';
 
-  for(currentValue = 1; currentValue < maxValue; currentValue++) {
-    var multipleOfThreeOrFive = currentValue % 3 === 0 || currentValue % 5 === 0;
+  var currentValue;
+  var sum = 0;
 
-    if(multipleOfThreeOrFive) {
+  for (currentValue = 1; currentValue < maxValue; currentValue += 1) {
+    var multipleOfThreeOrFive =
+      currentValue % 3 === 0 || currentValue % 5 === 0;
+
+    if (multipleOfThreeOrFive) {
       sum += currentValue;
     }
   }

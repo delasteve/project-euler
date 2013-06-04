@@ -2,10 +2,10 @@
 // It's sloppy. I wrote it in < 10 minutes. It will have bugs.
 // If you use this, you are hereby warned.
 
-var fs = require('fs')
-  , request = require('request')
-  , cheerio = require('cheerio')
-  , problemNumber = 8;
+var fs = require('fs');
+var request = require('request');
+var cheerio = require('cheerio');
+var problemNumber = 9;
 
 function createFolder(callback) {
   var folderName = 'problem-0';
@@ -18,8 +18,10 @@ function createFolder(callback) {
     folderName += problemNumber;
   }
 
-  fs.mkdir(folderName, 0775, function(err) {
-    if (err) throw err;
+  fs.mkdir(folderName, 0775, function (err) {
+    if (err) {
+      throw err;
+    }
 
     callback(folderName);
   });
@@ -34,20 +36,26 @@ function parsePage(folderName) {
 
     var fileToBeWritten = problemTitle + '\n==========\n\n';
 
-    problemStatement.each(function(i, pTag) {
+    problemStatement.each(function (i, pTag) {
       fileToBeWritten += $(pTag).html() + '\n\n';
     });
 
-    fileToBeWritten += '[Link to problem](' + url +')';
+    fileToBeWritten += '[Link to problem](' + url + ')';
 
     fs.writeFile(folderName + '/README.md', fileToBeWritten, function(err) {
-      if(err) throw err;
-      fs.writeFile(folderName + '/answer.txt', '', function(err) {
-        if (err) throw err;
-        fs.mkdir(folderName + '/javascript', 0775, function(err) {
+      if (err) {
+        throw err;
+      }
+      fs.writeFile(folderName + '/answer.txt', '', function (err) {
+        if (err) {
+          throw err;
+        }
+        fs.mkdir(folderName + '/javascript', 0775, function (err) {
           if (err) throw err;
-          fs.writeFile(folderName + '/javascript/app.js', '', function(err) {
-            if(err) throw err;
+          fs.writeFile(folderName + '/javascript/app.js', '', function (err) {
+            if (err) {
+              throw err;
+            }
             console.log('Created folder for problem ' + problemNumber);
           });
         });
